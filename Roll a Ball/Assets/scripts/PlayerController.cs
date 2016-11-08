@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour {
 	
 	}
 
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.CompareTag ("Pick Up")) {
+			other.gameObject.SetActive (false);
+		}
+	}
+
 	// For physics calculations
 	void FixedUpdate () {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
